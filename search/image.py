@@ -8,9 +8,7 @@ class Search:
         self.limit = limit
 
     def bing(self, query):
-        headers = {"Ocp-Apim-Subscription-Key" : self.key}
-        params  = {"q": query, "license": "public", "imageType": "photo"}
-        response = requests.get(self.url, headers=headers, params=params)
+        response = requests.get(self.url,headers={"Ocp-Apim-Subscription-Key":self.key},params={"q":query,"license":"public","imageType":"photo"})
         response.raise_for_status()
         return response.json()
 
@@ -21,8 +19,4 @@ class Search:
         return [img["contentUrl"] for img in self.bing(query)["value"][:self.limit]]
 
     def getLinksAndThumbs(self, query):
-        Image = namedtuple('Image', 'thumb, link')
-        response = self.bing(query)["value"][:self.limit]
-        thumbs = [img["thumbnailUrl"] for img in response]
-        links = [img["contentUrl"] for img in response]
-        return [Image._make([x, y]) for x, y in zip(thumbs, links)]
+        return [namedtuple('Image','thumb, link')._make(image) for image in [[img["thumbnailUrl"],img["contentUrl"]] for img in self.bing(query)["value"][:self.limit]]]
