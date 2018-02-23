@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Get a click bate title!">
+    <meta name="description" content="Get a click bait title!">
     <meta name="author" content="TBD">
     <link rel="stylesheet" type ="text/css" href="{{ url_for('static', filename='style.css') }}">
 <Title>Buzzfeed Boy</Title>    
@@ -13,15 +13,12 @@
         
         <img id="homeImage" src={{picture}} alt={{picture}}>
         
-        <form id="UserInputForm" action="/">
+        <form action="/searchImage" method="post">
             Enter some words you want in the title.<br>
-            <input id="agj1" type="text" name="keywords" placeholder="Enter first adjective."><br>
-            <input id="nown1" type="text" name="keywords" placeholder="Enter first nown."><br>
+            <input name="ajv1" type="text" placeholder="Enter adjective."><br>
+            <input name="noun1" type="text" placeholder="Enter noun."><br>
             <br>
-            <input id="agj2" type="text" name="keywords" placeholder="Enter second adjective."><br>
-            <input id="nown2" type="text" name="keywords" placeholder="Enter second nown."><br>
-            <br>
-            <button id="generateTitle" type="button">Generate Title!</button>
+            <button name="generateTitle" type="submit" formmethod="post" value="Submit">Generate Title!!!</button>
         </form>
         <footer>
             Contact Info: WIP
