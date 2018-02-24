@@ -8,7 +8,7 @@ class Search:
         self.limit = limit
 
     def bing(self, query):
-        response = requests.get(self.url,headers={"Ocp-Apim-Subscription-Key":self.key},params={"q":query,"license":"public","imageType":"photo"})
+        response = requests.get(self.url,headers={"Ocp-Apim-Subscription-Key":self.key},params={"q":query,"imageType":"Photo"})
         response.raise_for_status()
         return response.json()
 
