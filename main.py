@@ -16,7 +16,7 @@ def searchImages():
         
         search = (Search(5).getThumbs(words['ajv1'] + " " + words['noun1']))
         
-        return render_template("answer.html", title = clickbaitTitle, picture1=search[0], picture2=search[1], picture3=search[2], picture4=search[3], picture5=search[4])
+        return render_template("answer.html", title = clickbaitTitle, items=search)
     
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False)
