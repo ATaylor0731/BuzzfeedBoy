@@ -15,10 +15,10 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
 <Title>Buzzfeed Boy</Title>
 </head>
-    
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -29,16 +29,16 @@
         <li><a href="#">Contact Us</a></li>
     </ul>
     </div>
-    
+
 </nav>
 <body>
     <div class="container">
         <h1>Buzzfeed Generator</h1>
-        
+
         <div class="thumbnail">
         <!--<img id="homeImage" src={{picture}} alt={{picture}}>-->
-        <img src="homeImage.jpeg" class="img-responsive" alt="picture">
-            
+        <img src="{{url_for('static',filename="homeImage.jpeg")}}" class="img-responsive" alt="picture">
+
         <div class="dropup">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Number of Adjectives
             <span class="caret"></span></button>
@@ -49,10 +49,10 @@
                 <li class="divider"></li>
                 <li>3</li>
             </ul>
-        </div>  
+        </div>
         <div class="dropup">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Number of Nouns
-            <span class="caret"></span></button>    
+            <span class="caret"></span></button>
             <ul class="dropdown-menu">
                 <li>1</li>
                 <li class="divider"></li>
@@ -61,7 +61,7 @@
                 <li>3</li>
             </ul>
         </div>
-        
+
         <form action="/searchImage" method="post">
             Enter some words you want in the title.<br>
             <div class="form-group">
@@ -71,12 +71,12 @@
             <button type="submit" class="bnt btn-default" formmethod="post" value="Submit">Generate Title!!!</button>
         </form>
         </div>
-        
+
         <footer>
             <div class="thumbnail">
                 <p>Contact Info: WIP</p>
             </div>
-            
+
         </footer>
     </div>
 </body>
