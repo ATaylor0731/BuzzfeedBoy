@@ -9,14 +9,6 @@ body {
     background-color: dimgray;
 }
 
-
-
-#homeImage {
-    align-content: center;
-    height: 200px;
-    width: 300px;
-}
-
 #UserInput {
     width: 280px;
 }
@@ -45,3 +37,25 @@ body {
     height: auto;
     width: auto;
 }
+
+h1 {
+    color:#DDD;
+}
+
+.thumbnail {
+    background-color: #CCC;
+}
+
+.dropup {
+    display: inline-block;
+}
+
+.dropdown-menu {
+    text-align: center;
+}
+
+
+
+
+
+
