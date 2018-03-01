@@ -6,7 +6,7 @@
     <meta name="author" content="TBD">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+    <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">-->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -32,44 +32,53 @@
 
 </nav>
 <body>
-    <div class="container">
+    <div class="container-fluid text-center">
         <h1>Buzzfeed Generator</h1>
 
         <div class="thumbnail">
-        <!--<img id="homeImage" src={{picture}} alt={{picture}}>-->
-        <img src="{{url_for('static',filename="homeImage.jpeg")}}" class="img-responsive" alt="picture">
+            <!--<img id="homeImage" src={{picture}} alt={{picture}}>-->
+            <img src="{{url_for('static',filename="homeImage.jpeg")}}" class="img-responsive" alt="picture">
 
-        <div class="dropup">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Number of Adjectives
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li>1</li>
-                <li class="divider"></li>
-                <li>2</li>
-                <li class="divider"></li>
-                <li>3</li>
-            </ul>
-        </div>
-        <div class="dropup">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Number of Nouns
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li>1</li>
-                <li class="divider"></li>
-                <li>2</li>
-                <li class="divider"></li>
-                <li>3</li>
-            </ul>
-        </div>
-
-        <form action="/searchImage" method="post">
-            Enter some words you want in the title.<br>
-            <div class="form-group">
-            <input name="ajv1" type="text" placeholder="Enter adjective.">
-            <input name="noun1" type="text" placeholder="Enter noun.">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 center-text">
+                    <div class="btn-group">
+                        <div class="btn-group">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Number of Adjectives
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>1</li>
+                                <li class="divider"></li>
+                                <li>2</li>
+                                <li class="divider"></li>
+                                <li>3</li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Number of Nouns
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li>1</li>
+                                <li class="divider"></li>
+                                <li>2</li>
+                                <li class="divider"></li>
+                                <li>3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="bnt btn-default" formmethod="post" value="Submit">Generate Title!!!</button>
-        </form>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 center-text">
+                    <form action="/searchImage" method="post">
+                        Enter some words you want in the title.<br>
+                        <div class="form-group">
+                        <input name="ajv1" type="text" placeholder="Enter adjective.">
+                        <input name="noun1" type="text" placeholder="Enter noun.">
+                        </div>
+                        <button type="submit" class="bnt btn-default" formmethod="post" value="Submit">Generate Title!!!</button>
+                    </form>
+                </div>
+            </div>
         </div>
 
         <footer>

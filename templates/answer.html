@@ -1,17 +1,58 @@
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Get a click bait title!">
     <meta name="author" content="TBD">
-    <link rel="stylesheet" type ="text/css" href="{{ url_for('static', filename='style.css') }}">
-<Title> Buzz Images </Title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<Title>Buzzfeed Boy</Title>
 </head>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Buzzfeed Boy</a>
+        </div>
+        <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    </div>
+
+</nav>
 <body>
-    <div id="page">
-        <h1>{{ title }}</h1>
+    <div class="container-fluid text-center">
+        <h1>Buzzfeed Generator</h1>
         
-		{% for item in items %}
-		<img src={{item}} alt={{item}}>
-		{% endfor %}
-    </div>    
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+                <h1>{{ title }}</h1>
+            </div>
+        </div>
+        {% for item in items %}
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+		      <img class="thumbnail" src={{item}} alt={{item}}>
+            </div>
+        </div>
+        {% endfor %}
+        <footer>
+            <div class="thumbnail">
+                <p>Contact Info: WIP</p>
+            </div>
+
+        </footer>
+    </div>
 </body>
+</html>
