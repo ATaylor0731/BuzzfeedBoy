@@ -13,13 +13,17 @@ def searchImages():
     def adj_noun(words):
         lines = [
             ("You won't believe what this " + words['adj'] + " " + words['noun'] + " does next!!!", words['adj'] + " " + words['noun']),
-            ("This " + words['adj'] + " " + words['noun'] + " will make you laugh", words['adj'] + " " + words['noun'] + " laugh")
-        ]
+            ("This " + words['adj'] + " " + words['noun'] + " will make you laugh until you cry!", words['adj'] + " " + words['noun'] + " laugh")
+			(words['adj'] + " " + words['noun'] + " are Illegal?? Find out Why", words['adj'] + " " + words['noun'])
+			("Check out how " + words['adj'] + " " + words['noun'] " have changed for the better in 2018!!", words['adj'] + " " + words['noun'])
+		]
         return lines
     def adv_noun(words):
         lines = [
-            ("how to " + words['adv'] + " your " + words['noun'], words['adv'] + " " + words['noun']),
-            ("Donald Trump is " + words['adv'] + words['noun'], words['adv'] + " " + words['noun'])
+            ("How to " + words['adv'] + " your " + words['verb'], words['adv'] + " " + words['verb']),
+            ("Donald Trump is " + words['adv'] + words['verb'], words['adv'] + " " + words['verb'])
+			("The best way to " + words['adv'] + words['verb'] + " this holiday season", words['adv'] + " " + words['verb'])
+			("The fastest way to " + + words['adv'] + words['verb'] + " without your parents finding out!")
         ]
         return lines
     formTypes = {
