@@ -13,22 +13,22 @@ def searchImages():
     def adj_noun(words):
         lines = [
             ("You won't believe what this " + words['adj'] + " " + words['noun'] + " does next!!!", words['adj'] + " " + words['noun']),
-            ("This " + words['adj'] + " " + words['noun'] + " will make you laugh until you cry!", words['adj'] + " " + words['noun'] + " laugh")
-			(words['adj'] + " " + words['noun'] + " are Illegal?? Find out Why", words['adj'] + " " + words['noun'])
-			("Check out how " + words['adj'] + " " + words['noun'] " have changed for the better in 2018!!", words['adj'] + " " + words['noun'])
+            ("This " + words['adj'] + " " + words['noun'] + " will make you laugh until you cry!", words['adj'] + " " + words['noun'] + " laugh"),
+			(words['adj'] + " " + words['noun'] + " are Illegal?? Find out Why", words['adj'] + " " + words['noun']),
+			("Check out how " + words['adj'] + " " + words['noun'] + " have changed for the better in 2018!!", words['adj'] + " " + words['noun'])
 		]
         return lines
-    def adv_noun(words):
+    def adv_v(words):
         lines = [
-            ("How to " + words['adv'] + " your " + words['verb'], words['adv'] + " " + words['verb']),
-            ("Donald Trump is " + words['adv'] + words['verb'], words['adv'] + " " + words['verb'])
-			("The best way to " + words['adv'] + words['verb'] + " this holiday season", words['adv'] + " " + words['verb'])
-			("The fastest way to " + + words['adv'] + words['verb'] + " without your parents finding out!")
+            ("How to " + words['adv'] + " your " + words['v'], words['adv'] + " " + words['v']),
+            ("Donald Trump is " + words['adv'] + " " + words['v'], words['adv'] + " " + words['v']),
+			("The best way to " + words['adv'] + " " + words['v'] + " this holiday season", words['adv'] + " " + words['v']),
+			("The fastest way to " + words['adv'] + " " + words['v'] + " without your parents finding out!", words['adv'] + " " + words['v'])
         ]
         return lines
     formTypes = {
         "adj_noun": adj_noun,
-        "adv_noun": adv_noun
+        "adv_v": adv_v
     }
     if request.method == 'POST':
         words = request.form
