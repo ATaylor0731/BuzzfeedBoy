@@ -16,79 +16,77 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
 <Title>Buzzfeed Boy</Title>
 </head>
 
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Buzzfeed Boy</a>
-        </div>
-        <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Contact Us</a></li>
-    </ul>
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Buzzfeed Boy</a>
     </div>
-
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
 </nav>
 <body>
-    <div class="container-fluid text-center">
-        <h1>Buzzfeed Generator</h1>
+  <script>
+    function handleSelect(account) {
+      var savings = "<table><tr><td>test</td></tr></table>";
+      switch (account) {
+       case 'adj, n':
+        document.getElementById("form").innerHTML = '<input name="ajv1" type="text" placeholder="Enter adjective.">\n<input name="noun1" type="text" placeholder="Enter noun.">'
+        break;
+      case 'adv, n':
+        document.getElementById("form").innerHTML = '<input name="adv1" type="text" placeholder="Enter adverb.">\n<input name="noun1" type="text" placeholder="Enter noun.">'
+        break;
+      }
+    }
+  </script>
+  <div class="container-fluid text-center">
+    <h1>Buzzfeed Generator</h1>
 
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <img class="img-rounded img-responsive" src="{{url_for('static',filename="homeImage.jpeg")}}" alt="picture">
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 text-center">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <img class="img-rounded img-responsive" src="{{url_for('static',filename="homeImage.jpeg")}}" alt="picture">
-            </div>
+          <div class="col-md-10 col-md-offset-1 text-center">
+            <select name="templateDropdown" id="templateDropdown" onLoad="handleSelect(this.value)" onChange="handleSelect(this.value)">
+              <option value="adj, n" selected>Adjective, Noun</option>
+              <option value="adv, n">Adverb, Noun</option>
+            </select>
+          </div>
         </div>
         <div class="row">
-            <div class="col-md-10 col-md-offset-1 text-center">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1 text-center">
-                    <div class="btn-group">
-                        <div class="btn-group">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Number of Adjectives
-                            <span class="caret"></span></button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li class="text-center">1</li>
-                                <li class="divider"></li>
-                                <li class="text-center">2</li>
-                                <li class="divider"></li>
-                                <li class="text-center">3</li>
-                            </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Number of Nouns
-                            <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li class="text-center">1</li>
-                                <li class="divider"></li>
-                                <li class="text-center">2</li>
-                                <li class="divider"></li>
-                                <li class="text-center">3</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1 text-center">
-                    <form action="/searchImage" method="post">
-                        Enter some words you want in the title.<br>
-                        <div class="form-group">
-                        <input name="ajv1" type="text" placeholder="Enter adjective.">
-                        <input name="noun1" type="text" placeholder="Enter noun.">
-                        </div>
-                        <button type="submit" class="bnt btn-default" formmethod="post" value="Submit">Generate Title!!!</button>
-                    </form>
-                </div>
-            </div>
-            </div>
+          <div class="col-md-10 col-md-offset-1 text-center">
+            <form action="/searchImage" method="post">
+              Enter some words you want in the title.<br>
+              <div class="form-group" id="form">
+                <input name="ajv1" type="text" placeholder="Enter adjective.">
+                <input name="noun1" type="text" placeholder="Enter noun.">
+              </div>
+              <button type="submit" class="bnt btn-default" formmethod="post" value="Submit">Generate Title!!!</button>
+            </form>
+          </div>
         </div>
-        </div>
-        <footer>
-            <div class="thumbnail text-center">
-                Contact Info: WIP
-            </div>
-        </footer>
+      </div>
+    </div>
+      </div>
+      <footer>
+          <div class="thumbnail text-center">
+              Contact Info: WIP
+          </div>
+      </footer>
 </body>
 </html>
