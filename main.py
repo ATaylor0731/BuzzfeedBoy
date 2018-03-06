@@ -14,23 +14,24 @@ def searchImages():
         words = {'adj': filterWord(words['adj']), 'noun': filterWord(words['noun'])}
         lines = [
             ("You won't believe what this " + words['adj'] + " " + words['noun'] + " does next!!!", words['adj'] + " " + words['noun']),
-            ("This " + words['adj'] + " " + words['noun'] + " will make you laugh", words['adj'] + " " + words['noun'] + " laugh")
-        ]
+            ("This " + words['adj'] + " " + words['noun'] + " will make you laugh until you cry!", words['adj'] + " " + words['noun'] + " laugh"),
+			(words['adj'] + " " + words['noun'] + " are Illegal?? Find out Why", words['adj'] + " " + words['noun']),
+			("Check out how " + words['adj'] + " " + words['noun'] + " have changed for the better in 2018!!", words['adj'] + " " + words['noun'])
+		]
         return lines
-<<<<<<< Updated upstream
-    def adv_noun(words):
-=======
+
     def adv_v(words):
         words = {'adv': filterWord(words['adv']), 'v': filterWord(words['v'])}
->>>>>>> Stashed changes
         lines = [
-            ("how to " + words['adv'] + " your " + words['noun'], words['adv'] + " " + words['noun']),
-            ("Donald Trump is " + words['adv'] + words['noun'], words['adv'] + " " + words['noun'])
+            ("How to " + words['adv'] + " your " + words['v'], words['adv'] + " " + words['v']),
+            ("Donald Trump is " + words['adv'] + " " + words['v'], words['adv'] + " " + words['v']),
+			("The best way to " + words['adv'] + " " + words['v'] + " this holiday season", words['adv'] + " " + words['v']),
+			("The fastest way to " + words['adv'] + " " + words['v'] + " without your parents finding out!", words['adv'] + " " + words['v'])
         ]
         return lines
     formTypes = {
         "adj_noun": adj_noun,
-        "adv_noun": adv_noun
+        "adv_v": adv_v
     }
     if request.method == 'POST':
         words = request.form
