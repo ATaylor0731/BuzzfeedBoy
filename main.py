@@ -10,13 +10,13 @@ def index():
 
 @app.route('/searchImage', methods=['POST', 'GET'])
 def searchImages():
-    def adj_noun(words):
-        words = {'adj': filterWord(words['adj']), 'noun': filterWord(words['noun'])}
+    def adj_n(words):
+        words = {'adj': filterWord(words['adj']), 'n': filterWord(words['n'])}
         lines = [
-            ("You won't believe what this " + words['adj'] + " " + words['noun'] + " does next!!!", words['adj'] + " " + words['noun']),
-            ("This " + words['adj'] + " " + words['noun'] + " will make you laugh until you cry!", words['adj'] + " " + words['noun'] + " laugh"),
-			(words['adj'] + " " + words['noun'] + " are Illegal?? Find out Why", words['adj'] + " " + words['noun']),
-			("Check out how " + words['adj'] + " " + words['noun'] + " have changed for the better in 2018!!", words['adj'] + " " + words['noun'])
+            ("You won't believe what this " + words['adj'] + " " + words['n'] + " does next!!!", words['adj'] + " " + words['n']),
+            ("This " + words['adj'] + " " + words['n'] + " will make you laugh until you cry!", words['adj'] + " " + words['n'] + " laugh"),
+			(words['adj'] + " " + words['n'] + " are Illegal?? Find out Why", words['adj'] + " " + words['n']),
+			("Check out how " + words['adj'] + " " + words['n'] + " have changed for the better in 2018!!", words['adj'] + " " + words['n'])
 		]
         return lines
 
@@ -29,12 +29,21 @@ def searchImages():
 			("The fastest way to " + words['adv'] + " " + words['v'] + " without your parents finding out!", words['adv'] + " " + words['v'])
         ]
         return lines
+    def adj1_n1_n2_adj2(words):
+        words = {'adj1': filterWord(words['adj1']), 'n1': filterWord(words['n1']), 'adj2': filterWord(words['adj2']), 'n2': filterWord(words['n2'])}
+        lines = [
+            ("You won't believe what this " + words['adj1'] + " " + words['n1'] + " did to this " + words['adj2'] + " " + words['n2'], words['n1'] + " " + words['adj2'] + " " + words['n2']),
+            ("What this " + words['adj1'] + " " + words['n1'] + " did for this " + words['adj2'] + " " + words['n2'] + "... Amazing!", "amazing " + words['n1'] + " " + words['n2'])
+		]
+        return lines
     formTypes = {
-        "adj_noun": adj_noun,
+        "adj_n": adj_n,
+        "adj1_n1_n2_adj2": adj1_n1_n2_adj2,
         "adv_v": adv_v
     }
     if request.method == 'POST':
         words = request.form
+        print words
         clickbaitTitle, query = random.choice(formTypes["_".join([key for key, value in words.iteritems()])](words))
         search = (Search(5).getThumbs(query))
 
