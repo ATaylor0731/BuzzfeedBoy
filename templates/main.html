@@ -38,9 +38,9 @@
 </nav>
 <body>
   <script>
-    function handleSelect(account) {
+    function handleSelect(form) {
       var savings = "<table><tr><td>test</td></tr></table>";
-      switch (account) {
+      switch (form) {
       case 'adj, n':
         document.getElementById("form").innerHTML = '<input name="adj" type="text" placeholder="Enter adjective.">\n<input name="noun" type="text" placeholder="Enter noun.">'
         break;
