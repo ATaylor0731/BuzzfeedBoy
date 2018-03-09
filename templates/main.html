@@ -21,6 +21,10 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css"></script>
 
 <Title>Buzzfeed Boy</Title>
 </head>
@@ -42,11 +46,13 @@
       var savings = "<table><tr><td>test</td></tr></table>";
       switch (account) {
       case 'adj, n':
-        document.getElementById("form").innerHTML = '<input name="adj" type="text" placeholder="Enter adjective.">\n<input name="noun" type="text" placeholder="Enter noun.">'
+        document.getElementById("form").innerHTML = '<div class="col-md-5 col-md-offset-4"><input name="adj" class="form-control" type="text" placeholder="Enter adjective."></div><div class="col-md-5 col-md-offset-4"><input class="form-control" name="noun" type="text" placeholder="Enter noun."></div>'
         break;
       case 'adv, v':
-        document.getElementById("form").innerHTML = '<input name="adv" type="text" placeholder="Enter adverb.">\n<input name="v" type="text" placeholder="Enter verb.">'
+        document.getElementById("form").innerHTML = '<div class="col-md-5 col-md-offset-4"><input class="form-control" name="adv" type="text" placeholder="Enter adverb."></div><div class="col-md-5 col-md-offset-4"><input class="form-control" name="v" type="text" placeholder="Enter verb."></div>'
         break;
+      default:
+        document.getElementById("form").innerHTML = ''
       }
     }
   </script>
@@ -63,18 +69,18 @@
         <div class="row">
           <div class="col-md-10 col-md-offset-1 text-center">
             <select class="selectpicker" name="templateDropdown" id="templateDropdown" onLoad="handleSelect(this.value)" onChange="handleSelect(this.value)">
-              <option value="adj, n" selected>Adjective, Noun</option>
-              <option value="adv, v">Adverb, Verb</option>
+                <option value="default" selected>Pick your format</option>
+                <option value="adj, n">Adjective, Noun</option>
+                <option value="adv, v">Adverb, Verb</option>
             </select>
           </div>
         </div>
         <div class="row">
           <div class="col-md-10 col-md-offset-1 text-center">
             <form action="/searchImage" method="post">
-              Enter some words you want in the title.<br>
-              <div class="form-group" id="form">
-                <input name="adj" type="text" placeholder="Enter adjective.">
-                <input name="noun" type="text" placeholder="Enter noun.">
+                <br>
+              <div class="form-group row" id="form">
+                <!-- Text fields to enter text -->
               </div>
                 <div class="btn">
                     <button type="submit" class="btn btn-default" formmethod="post" value="Submit">Generate Title!!!</button>
