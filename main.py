@@ -24,14 +24,16 @@ def searchImages():
         words = {'adv': filterWord(words['adv']), 'v': filterWord(words['v'])}
         lines = [
 			("The best way to " + words['adv'] + " " + words['v'] + " this holiday season", words['adv'] + " " + words['v']),
-			("The fastest way to " + words['adv'] + " " + words['v'] + " without your parents finding out!", words['adv'] + " " + words['v'])
+			("The fastest way to " + words['adv'] + " " + words['v'] + " without your parents finding out!", words['adv'] + " " + words['v']),
+            ("The easiest way to " + words['adv'] + " " + words['v'] + " before you die!", words['adv'] + " " + words['v'])
         ]
         return lines
     def adj1_n1_n2_adj2(words):
         words = {'adj1': filterWord(words['adj1']), 'n1': filterWord(words['n1']), 'adj2': filterWord(words['adj2']), 'n2': filterWord(words['n2'])}
         lines = [
             ("You won't believe what this " + words['adj1'] + " " + words['n1'] + " did to this " + words['adj2'] + " " + words['n2'], words['n1'] + " " + words['adj2'] + " " + words['n2']),
-            ("What this " + words['adj1'] + " " + words['n1'] + " did for this " + words['adj2'] + " " + words['n2'] + "... Amazing!", "amazing " + words['n1'] + " " + words['n2'])
+            ("What this " + words['adj1'] + " " + words['n1'] + " did for this " + words['adj2'] + " " + words['n2'] + "... Amazing!", "amazing " + words['n1'] + " " + words['n2']),
+            ("A " + words['adj1'] + " " + words['n1'] + " helped this " + words['adj2'] + " " + words['n2'] + " and it was so inspiring!", words['adj1'] + " " + " " + words['n1'] + words['adj2'] + " " + words['n2'])
 		]
         return lines
     def v_n(words):
@@ -39,13 +41,16 @@ def searchImages():
         lines = [
             ("How to " + words['v'] + " your " + words['n'], words['v'] + " " + words['n']),
             ("You should never " + words['v'] + " this kind of " + words['n'], words['v'] + " " + words['n']),
+            ("Find out how we can " words['v'] + " " + words['n'] " and become better people!", words['v'] + " " + words['n'])
         ]
         return lines
     def ving_n(words):
         words = {'ving': filterWord(words['ving']), 'n': filterWord(words['n'])}
         lines = [
             ("Donald Trump is " + words['ving'] + " " + words['n'], words['ving'] + " " + words['n']),
-            ("Did you know you could make money by " + words['ving'] + " " + words['n'], "money " + words['ving'] + " " + words['n'])
+            ("Did you know you could make money by " + words['ving'] + " " + words['n'], "money " + words['ving'] + " " + words['n']),
+            ("These poor " + words['n'] + " are " + words['ving'] + "! You need to see it to believe it!", words['ving'] + " " + words['n']),
+            ("Want to be better at " words['ving'] + " your " + words['n'] + "? Find out here!", words['ving'] + " " + words['n'])
         ]
         return lines
     formTypes = {
