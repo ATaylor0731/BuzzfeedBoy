@@ -41,16 +41,16 @@ def searchImages():
         lines = [
             ("How to " + words['v'] + " your " + words['n'], words['v'] + " " + words['n']),
             ("You should never " + words['v'] + " this kind of " + words['n'], words['v'] + " " + words['n']),
-            ("Find out how we can " words['v'] + " " + words['n'] " and become better people!", words['v'] + " " + words['n'])
+            ("Find out how we can " + words['v'] + " " + words['n'] + " and become better people!", words['v'] + " " + words['n'])
         ]
         return lines
-    def ving_ns(words):
+    def ns_ving(words):
         words = {'ving': filterWord(words['ving']), 'ns': filterWord(words['ns'])}
         lines = [
             ("Donald Trump is " + words['ving'] + " " + words['ns'], words['ving'] + " " + words['ns']),
             ("Did you know you could make money by " + words['ving'] + " " + words['ns'], "money " + words['ving'] + " " + words['ns']),
             ("These poor " + words['ns'] + " are " + words['ving'] + "! You need to see it to believe it!", words['ving'] + " " + words['ns']),
-            ("Want to be better at " words['ving'] + " your " + words['ns'] + "? Find out here!", words['ving'] + " " + words['ns'])
+            ("Want to be better at " + words['ving'] + " your " + words['ns'] + "? Find out here!", words['ving'] + " " + words['ns'])
         ]
         return lines
     formTypes = {
@@ -58,11 +58,10 @@ def searchImages():
         "adj1_n1_n2_adj2": adj1_n1_n2_adj2,
         "adv_v": adv_v,
         "v_n": v_n,
-        "ving_ns": ving_ns
+        "ns_ving": ns_ving
     }
     if request.method == 'POST':
         words = request.form
-        print words
         clickbaitTitle, query = random.choice(formTypes["_".join([key for key, value in words.iteritems()])](words))
         search = (Search(5).getThumbs(query))
 
