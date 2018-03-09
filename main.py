@@ -10,28 +10,55 @@ def index():
 
 @app.route('/searchImage', methods=['POST', 'GET'])
 def searchImages():
-    def adj_noun(words):
-        words = {'adj': filterWord(words['adj']), 'noun': filterWord(words['noun'])}
+    def adj_n(words):
+        words = {'adj': filterWord(words['adj']), 'n': filterWord(words['n'])}
         lines = [
-            ("You won't believe what this " + words['adj'] + " " + words['noun'] + " does next!!!", words['adj'] + " " + words['noun']),
-            ("This " + words['adj'] + " " + words['noun'] + " will make you laugh until you cry!", words['adj'] + " " + words['noun'] + " laugh"),
-			(words['adj'] + " " + words['noun'] + " are Illegal?? Find out Why", words['adj'] + " " + words['noun']),
-			("Check out how " + words['adj'] + " " + words['noun'] + " have changed for the better in 2018!!", words['adj'] + " " + words['noun'])
+            ("You won't believe what this " + words['adj'] + " " + words['n'] + " does next!!!", words['adj'] + " " + words['n']),
+            ("This " + words['adj'] + " " + words['n'] + " will make you laugh until you cry!", words['adj'] + " " + words['n'] + " laugh"),
+			(words['adj'] + " " + words['n'] + " is ILLEGAL?? Find out Why!", words['adj'] + " " + words['n']),
+			("Check out how this " + words['adj'] + " " + words['n'] + " has changed for the better in 2018!", words['adj'] + " " + words['n'])
 		]
         return lines
 
     def adv_v(words):
         words = {'adv': filterWord(words['adv']), 'v': filterWord(words['v'])}
         lines = [
-            ("How to " + words['adv'] + " your " + words['v'], words['adv'] + " " + words['v']),
-            ("Donald Trump is " + words['adv'] + " " + words['v'], words['adv'] + " " + words['v']),
 			("The best way to " + words['adv'] + " " + words['v'] + " this holiday season", words['adv'] + " " + words['v']),
-			("The fastest way to " + words['adv'] + " " + words['v'] + " without your parents finding out!", words['adv'] + " " + words['v'])
+			("The fastest way to " + words['adv'] + " " + words['v'] + " without your parents finding out!", words['adv'] + " " + words['v']),
+            ("The easiest way to " + words['adv'] + " " + words['v'] + " before you die!", words['adv'] + " " + words['v'])
+        ]
+        return lines
+    def adj1_n1_n2_adj2(words):
+        words = {'adj1': filterWord(words['adj1']), 'n1': filterWord(words['n1']), 'adj2': filterWord(words['adj2']), 'n2': filterWord(words['n2'])}
+        lines = [
+            ("You won't believe what this " + words['adj1'] + " " + words['n1'] + " did to this " + words['adj2'] + " " + words['n2'], words['n1'] + " " + words['adj2'] + " " + words['n2']),
+            ("What this " + words['adj1'] + " " + words['n1'] + " did for this " + words['adj2'] + " " + words['n2'] + "... Amazing!", "amazing " + words['n1'] + " " + words['n2']),
+            ("A " + words['adj1'] + " " + words['n1'] + " helped this " + words['adj2'] + " " + words['n2'] + " and it was so inspiring!", words['adj1'] + " " + " " + words['n1'] + words['adj2'] + " " + words['n2'])
+		]
+        return lines
+    def v_n(words):
+        words = {'v': filterWord(words['v']), 'n': filterWord(words['n'])}
+        lines = [
+            ("How to " + words['v'] + " your " + words['n'], words['v'] + " " + words['n']),
+            ("You should never " + words['v'] + " this kind of " + words['n'], words['v'] + " " + words['n']),
+            ("Find out how we can " + words['v'] + " a " + words['n'] + " and become better people!", words['v'] + " " + words['n'])
+        ]
+        return lines
+    def ns_ving(words):
+        words = {'ving': filterWord(words['ving']), 'ns': filterWord(words['ns'])}
+        lines = [
+            ("Donald Trump is " + words['ving'] + " " + words['ns'], words['ving'] + " " + words['ns']),
+            ("Did you know you could make money by " + words['ving'] + " " + words['ns'], "money " + words['ving'] + " " + words['ns']),
+            ("These poor " + words['ns'] + " are " + words['ving'] + "! You need to see it to believe it!", words['ving'] + " " + words['ns']),
+            ("Want to be better at " + words['ving'] + " your " + words['ns'] + "? Find out here!", words['ving'] + " " + words['ns'])
         ]
         return lines
     formTypes = {
-        "adj_noun": adj_noun,
-        "adv_v": adv_v
+        "adj_n": adj_n,
+        "adj1_n1_n2_adj2": adj1_n1_n2_adj2,
+        "adv_v": adv_v,
+        "v_n": v_n,
+        "ns_ving": ns_ving
     }
     if request.method == 'POST':
         words = request.form
