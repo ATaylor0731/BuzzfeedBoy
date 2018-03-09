@@ -21,6 +21,10 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css"></script>
 
 <Title>Buzzfeed Boy</Title>
 </head>
@@ -41,20 +45,29 @@
     function handleSelect(form) {
       switch (form) {
       case 'adj, n':
+<<<<<<< HEAD
         document.getElementById("form").innerHTML = '<input name="adj" type="text" placeholder="Enter adjective.">\n<input name="n" type="text" placeholder="Enter noun.">'
         break;
       case 'adj1, n1, adj2, n2':
         document.getElementById("form").innerHTML = '<input name="adj1" type="text" placeholder="Enter adjective.">\n<input name="n1" type="text" placeholder="Enter noun.">\n<input name="adj2" type="text" placeholder="Enter adjective.">\n<input name="n2" type="text" placeholder="Enter noun.">'
+=======
+        document.getElementById("form").innerHTML = '<div class="col-md-5 col-md-offset-4"><input name="adj" class="form-control" type="text" placeholder="Enter adjective."></div><div class="col-md-5 col-md-offset-4"><input class="form-control" name="noun" type="text" placeholder="Enter noun."></div>'
+>>>>>>> 065512c829f2a712a39f3b1b0863f829497abdc2
         break;
       case 'adv, v':
-        document.getElementById("form").innerHTML = '<input name="adv" type="text" placeholder="Enter adverb.">\n<input name="v" type="text" placeholder="Enter verb.">'
+        document.getElementById("form").innerHTML = '<div class="col-md-5 col-md-offset-4"><input class="form-control" name="adv" type="text" placeholder="Enter adverb."></div><div class="col-md-5 col-md-offset-4"><input class="form-control" name="v" type="text" placeholder="Enter verb."></div>'
         break;
+<<<<<<< HEAD
       case 'v, n':
         document.getElementById("form").innerHTML = '<input name="v" type="text" placeholder="Enter verb.">\n<input name="n" type="text" placeholder="Enter noun.">'
         break;
       case 'ving, n':
         document.getElementById("form").innerHTML = '<input name="ving" type="text" placeholder="Enter verb-ing.">\n<input name="n" type="text" placeholder="Enter noun.">'
         break;
+=======
+      default:
+        document.getElementById("form").innerHTML = ''
+>>>>>>> 065512c829f2a712a39f3b1b0863f829497abdc2
       }
     }
   </script>
@@ -71,21 +84,33 @@
         <div class="row">
           <div class="col-md-10 col-md-offset-1 text-center">
             <select class="selectpicker" name="templateDropdown" id="templateDropdown" onLoad="handleSelect(this.value)" onChange="handleSelect(this.value)">
+<<<<<<< HEAD
               <option value="adj, n" selected>Adjective, Noun</option>
               <option value="adj1, n1, adj2, n2">Adjective, Noun, Adjective, Noun</option>
               <option value="adv, v">Adverb, Verb</option>
               <option value="v, n">Verb, Noun</option>
               <option value="ving, n">Verb-ing, Noun</option>
+=======
+                <option value="default" selected>Pick your format</option>
+                <option value="adj, n">Adjective, Noun</option>
+                <option value="adv, v">Adverb, Verb</option>
+>>>>>>> 065512c829f2a712a39f3b1b0863f829497abdc2
             </select>
           </div>
         </div>
         <div class="row">
           <div class="col-md-10 col-md-offset-1 text-center">
             <form action="/searchImage" method="post">
+<<<<<<< HEAD
               Enter some words you want in the title.<br>
               <div class="form-group" id="form">
                 <input name="adj" type="text" placeholder="Enter adjective.">
                 <input name="n" type="text" placeholder="Enter noun.">
+=======
+                <br>
+              <div class="form-group row" id="form">
+                <!-- Text fields to enter text -->
+>>>>>>> 065512c829f2a712a39f3b1b0863f829497abdc2
               </div>
                 <div class="btn">
                     <button type="submit" class="btn btn-default" formmethod="post" value="Submit">Generate Title!!!</button>
