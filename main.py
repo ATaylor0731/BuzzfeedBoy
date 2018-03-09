@@ -34,10 +34,26 @@ def searchImages():
             ("What this " + words['adj1'] + " " + words['n1'] + " did for this " + words['adj2'] + " " + words['n2'] + "... Amazing!", "amazing " + words['n1'] + " " + words['n2'])
 		]
         return lines
+    def v_n(words):
+        words = {'v': filterWord(words['v']), 'n': filterWord(words['n'])}
+        lines = [
+            ("How to " + words['v'] + " your " + words['n'], words['v'] + " " + words['n']),
+            ("You should never " + words['v'] + " this kind of " + words['n'], words['v'] + " " + words['n']),
+        ]
+        return lines
+    def ving_n(words):
+        words = {'ving': filterWord(words['ving']), 'n': filterWord(words['n'])}
+        lines = [
+            ("Donald Trump is " + words['ving'] + " " + words['n'], words['ving'] + " " + words['n']),
+            ("Did you know you could make money by " + words['ving'] + " " + words['n'], "money " + words['ving'] + " " + words['n'])
+        ]
+        return lines
     formTypes = {
         "adj_n": adj_n,
         "adj1_n1_n2_adj2": adj1_n1_n2_adj2,
-        "adv_v": adv_v
+        "adv_v": adv_v,
+        "v_n": v_n,
+        "ving_n": ving_n
     }
     if request.method == 'POST':
         words = request.form
