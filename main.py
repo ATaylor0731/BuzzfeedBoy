@@ -15,8 +15,8 @@ def searchImages():
         lines = [
             ("You won't believe what this " + words['adj'] + " " + words['n'] + " does next!!!", words['adj'] + " " + words['n']),
             ("This " + words['adj'] + " " + words['n'] + " will make you laugh until you cry!", words['adj'] + " " + words['n'] + " laugh"),
-			(words['adj'] + " " + words['n'] + " are Illegal?? Find out Why", words['adj'] + " " + words['n']),
-			("Check out how " + words['adj'] + " " + words['n'] + " have changed for the better in 2018!!", words['adj'] + " " + words['n'])
+			(words['adj'] + " " + words['n'] + " is ILLEGAL?? Find out Why!", words['adj'] + " " + words['n']),
+			("Check out how this " + words['adj'] + " " + words['n'] + " has changed for the better in 2018!", words['adj'] + " " + words['n'])
 		]
         return lines
 
@@ -41,7 +41,7 @@ def searchImages():
         lines = [
             ("How to " + words['v'] + " your " + words['n'], words['v'] + " " + words['n']),
             ("You should never " + words['v'] + " this kind of " + words['n'], words['v'] + " " + words['n']),
-            ("Find out how we can " + words['v'] + " " + words['n'] + " and become better people!", words['v'] + " " + words['n'])
+            ("Find out how we can " + words['v'] + " a " + words['n'] + " and become better people!", words['v'] + " " + words['n'])
         ]
         return lines
     def ns_ving(words):

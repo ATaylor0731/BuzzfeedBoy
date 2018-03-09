@@ -45,19 +45,19 @@
     function handleSelect(form) {
       switch (form) {
       case 'adj, n':
-        document.getElementById("form").innerHTML = '<input name="adj" type="text" placeholder="Enter adjective.">\n<input name="n" type="text" placeholder="Enter noun.">'
+        document.getElementById("form").innerHTML = '<input name="adj" type="text" placeholder="ADJECTIVE">\n<input name="n" type="text" placeholder="SINGULAR NOUN">'
         break;
       case 'adj1, n1, adj2, n2':
-        document.getElementById("form").innerHTML = '<input name="adj1" type="text" placeholder="Enter adjective.">\n<input name="n1" type="text" placeholder="Enter noun.">\n<input name="adj2" type="text" placeholder="Enter adjective.">\n<input name="n2" type="text" placeholder="Enter noun.">'
+        document.getElementById("form").innerHTML = '<input name="adj1" type="text" placeholder="ADJECTIVE">\n<input name="n1" type="text" placeholder="SINGULAR NOUN">\n<input name="adj2" type="text" placeholder="ADJECTIVE">\n<input name="n2" type="text" placeholder="SINGULAR NOUN">'
         break;
       case 'adv, v':
-        document.getElementById("form").innerHTML = '<input class="form-control" name="adv" type="text" placeholder="Enter adverb."><input class="form-control" name="v" type="text" placeholder="Enter verb.">'
+        document.getElementById("form").innerHTML = '<input name="adv" type="text" placeholder="ADVERB">\n<input name="v" type="text" placeholder="VERB">'
         break;
       case 'v, n':
-        document.getElementById("form").innerHTML = '<input name="v" type="text" placeholder="Enter verb.">\n<input name="n" type="text" placeholder="Enter noun.">'
+        document.getElementById("form").innerHTML = '<input name="v" type="text" placeholder="VERB">\n<input name="n" type="text" placeholder="SINGULAR NOUN">'
         break;
       case 'ving, ns':
-        document.getElementById("form").innerHTML = '<input name="ving" type="text" placeholder="Enter verb-ing.">\n<input name="ns" type="text" placeholder="Enter noun.">'
+        document.getElementById("form").innerHTML = '<input name="ving" type="text" placeholder="VERB ENDING ING">\n<input name="ns" type="text" placeholder="PLURAL NOUN">'
         break;
       default:
         document.getElementById("form").innerHTML = ''
